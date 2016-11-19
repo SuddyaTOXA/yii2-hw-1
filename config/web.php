@@ -39,9 +39,8 @@ $config = [
         ],
         'db' => require(__DIR__ . '/db.php'),
         'urlManager' => [
-            'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'enableStrictParsing' => true,
+            'enablePrettyUrl' => true,
             'rules' => [
                 [
                     'pattern' => '',
@@ -49,9 +48,19 @@ $config = [
                     'suffix' => ''
                 ],
                 [
+                    'pattern' => '<controller>/<action>/<id>',
+                    'route' => '<controller>/<action>',
+                    'suffix' => ''
+                ],
+                [
                     'pattern' => '<controller>/<action>',
                     'route' => '<controller>/<action>',
                     'suffix' => '.html'
+                ],
+                [
+                    'pattern' => '<module>/<controller>/<action>/<id>',
+                    'route' => '<module>/<controller>/<action>',
+                    'suffix' => ''
                 ],
                 [
                     'pattern' => '<module>/<controller>/<action>',
